@@ -12,6 +12,7 @@ const ffstalk = require("./routes/ffstalk");
 const cuaca = require("./routes/cuaca");
 const allDownloader = require("./routes/allDownloader");
 const shiroko = require("./routes/shiroko");
+const shiroko = require("./routes/cosplay");
 const ronaldo = require("./routes/random/ronaldo");
 const messi = require("./routes/random/messi");
 const apalah = require("./routes/apalah");
@@ -51,6 +52,7 @@ app.use ("/", ffstalk);
 app.use ("/", cuaca);
 app.use ("/", ronaldo);
 app.use ("/", shiroko);
+app.use ("/", cosplay);
 app.use ("/", messi);
 app.use ("/", apalah);
 
