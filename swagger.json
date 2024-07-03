@@ -490,7 +490,7 @@
     "/cosplay": {
     "get": {
       "tags": ["Random"],
-      "summary": "Get a cosplay Ronaldo image",
+      "summary": "Get a cosplay image",
       "produces": [
         "image/jpeg",
         "image/png",
