@@ -3,9 +3,9 @@
   "info": {
     "title": "REST API GRATIS",
     "contact": {
-      "name": "KAIZEL KEY",
-      "url": "https://kaizelprofil.netlify.app/",
-      "whatsapp": "+6282126446272"
+      "name": "KAIZEL",
+      "url": "https://riskimivan.my.id",
+      "whatsapp": "+6289505520763"
     }
   },
   "paths": {
@@ -487,42 +487,6 @@
       }
     }
   },
-    "/cosplay": {
-    "get": {
-      "tags": ["Random"],
-      "summary": "Get a cosplay image",
-      "produces": [
-        "image/jpeg",
-        "image/png",
-        "image/jpg"
-      ],
-      "responses": {
-        "200": {
-          "description": "Successful operation",
-          "content": {
-            "image/jpeg": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            },
-            "image/png": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            },
-            "image/jpg": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
     "/messi": {
     "get": {
       "tags": ["Random"],
@@ -563,6 +527,42 @@
     "get": {
       "tags": ["nsfw"],
       "summary": "Get a random nsfw image",
+      "produces": [
+        "image/jpeg",
+        "image/png",
+        "image/jpg"
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful operation",
+          "content": {
+            "image/jpeg": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            },
+            "image/png": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            },
+            "image/jpg": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+ "/cosplay": {
+    "get": {
+      "tags": ["sfw"],
+      "summary": "Get a random cosplay image",
       "produces": [
         "image/jpeg",
         "image/png",
