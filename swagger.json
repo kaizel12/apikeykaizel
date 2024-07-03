@@ -1014,13 +1014,12 @@
           }
         }
       }
-    },
-    
-            "/play": {
+    }, 
+     "/play": {
       "get": {
         "tags": ["Downloader"],
-        "summary": "Play Music/Vidio",
-        "description": "Endpoint untuk Play Music",
+        "summary": "Play Music/Video",
+        "description": "Endpoint untuk memutar musik atau video berdasarkan judul",
         "parameters": [
           {
             "name": "query",
@@ -1029,7 +1028,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Judul nya"
+            "description": "Judul musik atau video yang ingin diputar"
           }
         ],
         "responses": {
@@ -1043,16 +1042,16 @@
       "get": {
         "tags": ["Search"],
         "summary": "Informasi Pengguna Instagram",
-        "description": "Endpoint untuk mendapatkan informasi pengguna Instagram",
+        "description": "Endpoint untuk mendapatkan informasi pengguna Instagram berdasarkan username",
         "parameters": [
           {
             "name": "username",
             "in": "query",
-            "description": "Nama pengguna Instagram yang ingin dicari",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Nama pengguna Instagram yang ingin dicari informasinya"
           }
         ],
         "responses": {
@@ -1061,21 +1060,20 @@
           }
         }
       }
-    }
-  }, 
-      "/jadwaltv": {
+    },
+    "/jadwaltv": {
       "get": {
-        "summary": "Get TV schedules",
-        "tags": ["search"],
+        "summary": "Get TV Schedules",
+        "tags": ["Search"],
         "parameters": [
           {
-            "in": "query",
             "name": "channel",
+            "in": "query",
+            "required": true,
             "schema": {
               "type": "string"
             },
-            "required": true,
-            "description": "TV channel to get the schedule for"
+            "description": "Nama saluran TV untuk mendapatkan jadwalnya"
           }
         ],
         "responses": {
@@ -1090,11 +1088,11 @@
                     "properties": {
                       "time": {
                         "type": "string",
-                        "description": "Time of the TV program"
+                        "description": "Waktu tayang program TV"
                       },
                       "program": {
                         "type": "string",
-                        "description": "Title of the TV program"
+                        "description": "Judul program TV"
                       }
                     }
                   }
@@ -1104,5 +1102,6 @@
           }
         }
       }
-    } 
-  
+    }
+  }
+}
