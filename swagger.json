@@ -559,42 +559,7 @@
       }
     }
   },
- "/cosplay": {
-    "get": {
-      "tags": ["sfw"],
-      "summary": "Get a random cosplay image",
-      "produces": [
-        "image/jpeg",
-        "image/png",
-        "image/jpg"
-      ],
-      "responses": {
-        "200": {
-          "description": "Successful operation",
-          "content": {
-            "image/jpeg": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            },
-            "image/png": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            },
-            "image/jpg": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
+ 
     "/api/tiktok": {
       "get": {
         "tags": ["Downloader"],
