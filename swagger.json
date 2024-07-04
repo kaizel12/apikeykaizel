@@ -1141,7 +1141,7 @@
     }
   }
   {
-  "/search": {
+  "/searchnime": {
     "get": {
       "tags": ["Searchnime"],
       "summary": "Search Anime",
