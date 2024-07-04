@@ -44,7 +44,6 @@ app.use("/", helloRoute);
 app.use("/", tiktokRoute);
 app.use("/", igstalkRoute);
 app.use("/", aiRoute);
-app.use("/", simsimi);
 app.use("/", igdlRoute);
 app.use("/", ghStalk);
 app.use("/", allDownloader);
