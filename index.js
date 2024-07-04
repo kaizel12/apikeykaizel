@@ -51,7 +51,6 @@ app.use("/", ffstalk);
 app.use("/", cuaca);
 app.use("/", ronaldo);
 app.use("/", cosplay);
-app.use("/", jadwaltv);
 app.use("/", shiroko);
 app.use("/", messi);
 app.use("/", apalah);
