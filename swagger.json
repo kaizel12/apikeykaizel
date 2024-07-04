@@ -1097,51 +1097,7 @@
         }
       }
     },
-    "/jadwaltv": {
-    "get": {
-      "tags": ["Search"],
-      "summary": "Jadwal TV",
-      "description": "Endpoint untuk mendapatkan jadwal program TV berdasarkan saluran.",
-      "parameters": [
-        {
-          "name": "channel",
-          "in": "query",
-          "required": true,
-          "schema": {
-            "type": "string"
-          },
-          "description": "Nama saluran TV untuk mendapatkan jadwalnya."
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "Successful response",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "time": {
-                      "type": "string",
-                      "description": "Waktu tayang program TV."
-                    },
-                    "program": {
-                      "type": "string",
-                      "description": "Judul program TV."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  {
-  "/search": {
+      "/searchnime": {
     "get": {
       "tags": ["Searchnime"],
       "summary": "Search Anime",
@@ -1231,5 +1187,49 @@
         }
       }
     }
+      }, 
+    "/jadwaltv": {
+    "get": {
+      "tags": ["Search"],
+      "summary": "Jadwal TV",
+      "description": "Endpoint untuk mendapatkan jadwal program TV berdasarkan saluran.",
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Nama saluran TV untuk mendapatkan jadwalnya."
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "time": {
+                      "type": "string",
+                      "description": "Waktu tayang program TV."
+                    },
+                    "program": {
+                      "type": "string",
+                      "description": "Judul program TV."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
- }
+   }
+}
