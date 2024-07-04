@@ -3,7 +3,7 @@ const axios = require('axios');
 const router = express.Router();
 
 // Array of Ronaldo images URLs
-const data [
+const data = [
   "https://telegra.ph/file/6c9c350e3b3ff7578082c.jpg",
   "https://telegra.ph/file/72c7ba657280ff4a19bce.jpg",
   "https://telegra.ph/file/ac23cea08e08930392e4c.jpg",
