@@ -1102,6 +1102,28 @@
           }
         }
       }
+  }, 
+"/api/simsimi": {
+    "get": {
+      "tags": ["Ai"],
+      "summary": "Kirim Pesan ke SimSimi",
+      "description": "Endpoint untuk mengirimkan pesan ke SimSimi dan mendapatkan respons",
+      "parameters": [
+        {
+          "name": "text",
+          "in": "query",
+          "description": "Teks yang ingin dikirimkan ke SimSimi",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
     }
   }
 }
