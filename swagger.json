@@ -1140,6 +1140,98 @@
       }
     }
   }
+  {
+  "/search": {
+    "get": {
+      "tags": ["Searchnime"],
+      "summary": "Search Anime",
+      "description": "Endpoint untuk mencari anime berdasarkan query pencarian.",
+      "parameters": [
+        {
+          "name": "q",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Kata kunci pencarian untuk mencari anime."
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "description": "Judul anime."
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Status anime."
+                    },
+                    "epsd": {
+                      "type": "string",
+                      "description": "Episode anime."
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "Tipe anime."
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "URL anime."
+                    },
+                    "img": {
+                      "type": "string",
+                      "description": "URL gambar anime."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string",
+                    "description": "Deskripsi kesalahan."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string",
+                    "description": "Deskripsi kesalahan."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
+}
 }
   
