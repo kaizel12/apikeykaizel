@@ -13,11 +13,11 @@ const ffstalk = require("./routes/ffstalk");
 const cuaca = require("./routes/cuaca");
 const allDownloader = require("./routes/allDownloader");
 const cosplay = require("./routes/cosplay");
+const jadwaltv = require("./routes/jadwaltv");
 const shiroko = require("./routes/shiroko");
 const ronaldo = require("./routes/random/ronaldo");
 const messi = require("./routes/random/messi");
 const apalah = require("./routes/apalah");
-const jadwaltv = require("./routes/jadwaltv");
 
 const swaggerAssetsRoute = require("./routes/swaggerAssetsRoute");
 module.exports = require('./index.js');
@@ -52,10 +52,11 @@ app.use("/", ffstalk);
 app.use("/", cuaca);
 app.use("/", ronaldo);
 app.use("/", cosplay);
+app.use("/", jadwaltv);
 app.use("/", shiroko);
 app.use("/", messi);
 app.use("/", apalah);
-app.use("/", jadwaltv);
+
 
 // Route untuk halaman utama
 app.get("/", (req, res) => {
