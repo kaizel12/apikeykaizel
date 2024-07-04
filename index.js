@@ -12,7 +12,6 @@ const ghStalk = require("./routes/ghStalk");
 const ffstalk = require("./routes/ffstalk");
 const cuaca = require("./routes/cuaca");
 const allDownloader = require("./routes/allDownloader");
-const simsimi = require("./routes/simsimi");
 const cosplay = require("./routes/cosplay");
 const jadwaltv = require("./routes/jadwaltv");
 const shiroko = require("./routes/shiroko");
