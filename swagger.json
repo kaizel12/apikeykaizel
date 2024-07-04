@@ -1063,7 +1063,7 @@
     },
     "/jadwaltv": {
       "get": {
-        "summary": "Get TV Schedules",
+        "summary": "tv apa",
         "tags": ["Search"],
         "parameters": [
           {
