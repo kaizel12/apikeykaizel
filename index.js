@@ -32,12 +32,10 @@ app.use(express.json());
 // Serve Swagger documentation beserta CSS kustom
 app.use("/api-docs", swaggerAssetsRoute);
 app.get("/swagger.json", (req, res) => {
-  const swaggerPath = path.join(__dirname, "/swagger.json");
-
+  const swaggerPath = path.join(__dirname, "swagger.json");
   const swaggerJson = fs.readFileSync(swaggerPath, "utf-8");
 
   res.setHeader("Content-Type", "application/json");
-
   res.send(swaggerJson);
 });
 
@@ -59,10 +57,18 @@ app.use("/", shiroko);
 app.use("/", messi);
 app.use("/", apalah);
 
-
 // Route untuk halaman utama
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// Handle favicon requests
+app.get('/favicon.ico', (req, res) => res.status(204));
+
+// Debugging
+app.use((req, res, next) => {
+  console.log(`Request URL: ${req.url}`);
+  next();
 });
 
 // Start server
