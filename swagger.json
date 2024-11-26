@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "REST API GRATIS",
+    "title": "REST API GRATIS KaiAPI",
     "contact": {
       "name": "Kaizel jesh",
       "url": "kaifire.vercel.app",
@@ -402,38 +402,104 @@
     }
   }
 },
-"/styletext": {
-  "get": {
-    "summary": "Style text",
-    "tags": ["Style Text"],
-    "parameters": [
-      {
-        "in": "query",
-        "name": "text",
-        "schema": {
-          "type": "string"
-        },
-        "required": true,
-        "description": "Text to be styled"
-      }
-    ],
-    "responses": {
-      "200": {
-        "description": "Successful response",
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "array",
-              "items": {
+
+  "/styletext": {
+    "get": {
+      "summary": "Style text",
+      "tags": ["Style Text"],
+      "parameters": [
+        {
+          "in": "query",
+          "name": "text",
+          "schema": {
+            "type": "string"
+          },
+          "required": true,
+          "description": "Text to be styled"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful response",
+          "content": {
+            "application/json": {
+              "schema": {
                 "type": "object",
                 "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "Name of the text style"
+                  "status": {
+                    "type": "integer",
+                    "example": 200,
+                    "description": "Status code of the response"
                   },
-                  "result": {
+                  "message": {
                     "type": "string",
-                    "description": "Styled text"
+                    "example": "Berhasil",
+                    "description": "Message of the response"
+                  },
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "description": "Name of the text style"
+                        },
+                        "result": {
+                          "type": "string",
+                          "description": "Styled text"
+                        }
+                      }
+                    }
+                  },
+                  "creator": {
+                    "type": "string",
+                    "example": "API Kaizel",
+                    "description": "Name of the creator"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 400,
+                    "description": "Status code of the response"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Masukkan teks untuk diubah gayanya!",
+                    "description": "Error message"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 500,
+                    "description": "Status code of the response"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Terjadi kesalahan",
+                    "description": "Error message"
                   }
                 }
               }
@@ -443,7 +509,7 @@
       }
     }
   }
-}
+
 
     
     ,
