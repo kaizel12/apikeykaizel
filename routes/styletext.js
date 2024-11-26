@@ -23,6 +23,7 @@ router.get("/api/styletext", async (req, res) => {
       status: 200,
       message: "Berhasil",
       results: hasil,
+      creator: "API Kaizel", // Informasi kreator diletakkan di bawah hasil
     });
   } catch (error) {
     console.error(error);
