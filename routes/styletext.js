@@ -20,10 +20,9 @@ router.get("/api/styletext", async (req, res) => {
   try {
     const hasil = await styletext(teks);
     res.status(200).json({
-      status: 200,
-      message: "Berhasil",
-      results: hasil,
-      creator: "API Kaizel", // Informasi kreator diletakkan di bawah hasil
+      
+      data: hasil, // Data hasil transformasi teks
+      creator: "API Kaizel", // Informasi kreator di luar data
     });
   } catch (error) {
     console.error(error);
