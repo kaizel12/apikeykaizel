@@ -20,7 +20,7 @@ const shiroko = require("./routes/shiroko");
 const ronaldo = require("./routes/random/ronaldo");
 const messi = require("./routes/random/messi");
 const apalah = require("./routes/apalah");
-
+const styletext = require("./routes/styletext");
 const swaggerAssetsRoute = require("./routes/swaggerAssetsRoute");
 module.exports = require('./index.js');
 
@@ -56,6 +56,7 @@ app.use("/", loli);
 app.use("/", cosplay);
 app.use("/", shiroko);
 app.use("/", messi);
+app.use("/", styletext);
 app.use("/", apalah);
 
 // Route untuk halaman utama
