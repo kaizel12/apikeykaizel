@@ -1125,7 +1125,6 @@
                 }
               }
             }
-          }
         },
         "400": {
           "description": "Bad Request",
