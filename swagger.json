@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "REST API GRATIS KaiAPI",
+    "title": "REST API GRATIS",
     "contact": {
       "name": "Kaizel jesh",
       "url": "kaifire.vercel.app",
@@ -403,6 +403,7 @@
   }
 },
 
+  
   "/styletext": {
     "get": {
       "summary": "Style text",
@@ -415,7 +416,7 @@
             "type": "string"
           },
           "required": true,
-          "description": "Text to be styled"
+          "description": "Text to be styled by kaizel"
         }
       ],
       "responses": {
@@ -426,17 +427,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "status": {
-                    "type": "integer",
-                    "example": 200,
-                    "description": "Status code of the response"
-                  },
-                  "message": {
-                    "type": "string",
-                    "example": "Berhasil",
-                    "description": "Message of the response"
-                  },
-                  "results": {
+                  "data": {
                     "type": "array",
                     "items": {
                       "type": "object",
@@ -509,6 +500,7 @@
       }
     }
   }
+
 
 
     
