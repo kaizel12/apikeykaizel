@@ -3,10 +3,10 @@ const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 const router = express.Router();
 
-router.post("/episode", async (req, res) => {
+router.get("/episode", async (req, res) => {
     try {
-        const { id } = req.body;
-        if (!id) throw "Penggunaan: Kirim 'id' dalam body request.";
+        const { id } = req.query;  // Mengambil parameter 'id' dari query string
+        if (!id) throw "Penggunaan: Kirim 'id' dalam query string.";
 
         const url = `https://otakudesu.cloud/episode/${id}`;
         console.log(`Mengakses URL: ${url}`);  // Debug log untuk memastikan URL yang benar
