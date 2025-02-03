@@ -138,31 +138,24 @@
     }
   }
 },
-        "/episode": {
-      "post": {
-        "summary": "episode download links from Otakudesu",
-        "tags": ["episoder"],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "example": "cdjkn-episode-5-sub-indo",
-                    "description": "ID episode Otakudesu"
-                  }
-                },
-                "required": ["id"]
-              }
-            }
+         "/episode": {
+      "get": {
+        "summary": "Get download links for episode",
+        "tags": ["Episode"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "ID episode yang akan diambil, seperti 'cdjkn-episode-5-sub-indo'"
           }
-        },
+        ],
         "responses": {
           "200": {
-            "description": "Successful response",
+            "description": "Sukses mengambil link download",
             "content": {
               "application/json": {
                 "schema": {
@@ -178,7 +171,7 @@
                         "properties": {
                           "quality": {
                             "type": "string",
-                            "example": "720p"
+                            "description": "Kualitas video"
                           },
                           "links": {
                             "type": "array",
@@ -187,38 +180,18 @@
                               "properties": {
                                 "serverName": {
                                   "type": "string",
-                                  "example": "Google Drive"
+                                  "description": "Nama server untuk download"
                                 },
                                 "downloadLink": {
                                   "type": "string",
                                   "format": "uri",
-                                  "example": "https://example.com/download"
+                                  "description": "URL link download"
                                 }
                               }
                             }
                           }
                         }
                       }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean",
-                      "example": false
-                    },
-                    "error": {
-                      "type": "string",
-                      "example": "Penggunaan: Kirim 'id' dalam body request."
                     }
                   }
                 }
@@ -233,12 +206,11 @@
                   "type": "object",
                   "properties": {
                     "success": {
-                      "type": "boolean",
-                      "example": false
+                      "type": "boolean"
                     },
                     "error": {
                       "type": "string",
-                      "example": "Internal Server Error"
+                      "description": "Pesan error yang menjelaskan masalah"
                     }
                   }
                 }
@@ -247,7 +219,7 @@
           }
         }
       }
-    }, 
+    },    
 "/wikimedia": {
   "get": {
     "summary": "Search images on Wikimedia Commons",
