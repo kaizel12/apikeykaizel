@@ -14,7 +14,7 @@ const allDownloader = require("./routes/allDownloader");
 const ronaldo = require("./routes/random/ronaldo");
 const messi = require("./routes/random/messi");
 const apalah = require("./routes/apalah");
-const igstalkRoute = require("./routes/applesearch");
+const applesearchRoute = require("./routes/applesearch");
 const appledownloadRoute = require("./routes/appledownload");
 
 
