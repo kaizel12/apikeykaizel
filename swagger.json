@@ -3,9 +3,9 @@
   "info": {
     "title": "REST API GRATIS",
     "contact": {
-      "name": "Akuivan13",
-      "url": "https://riskimivan.my.id",
-      "whatsapp": "+6289505520763"
+      "name": " kai",
+      "url": "chanell:https://whatsapp.com/channel/0029VanrndJICVfcrjFr3x2R",
+      "whatsapp": "+6282126446272"
     }
   },
   "paths": {
@@ -44,6 +44,181 @@
         }
       }
     },
+    "/api/apple": {
+      "get": {
+        "tags": ["Downloader", "Apple Music"],
+        "summary": "Search di Apple Music",
+        "description": "Mencari lagu/artis/album di Apple Music berdasarkan term pencarian",
+        "parameters": [
+          {
+            "name": "term",
+            "in": "query",
+            "description": "Kata kunci untuk pencarian Apple Music",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Hasil pencarian berhasil",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "type": "string"
+                          },
+                          "link": {
+                            "type": "string",
+                            "format": "uri"
+                          },
+                          "image": {
+                            "type": "string",
+                            "format": "uri",
+                            "nullable": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Term pencarian tidak disertakan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "integer", "example": 400 },
+                    "message": { "type": "string", "example": "Please provide a search term!" }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error server",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "integer", "example": 500 },
+                    "message": { "type": "string", "example": "An error occurred while searching Apple Music." }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/appledownload": {
+      "post": {
+        "tags": ["Downloader", "Apple Music"],
+        "summary": "Download dari Apple Music",
+        "description": "Mengunduh lagu dari Apple Music menggunakan service pihak ketiga",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["songName", "artistName", "url"],
+                "properties": {
+                  "songName": {
+                    "type": "string",
+                    "description": "Nama lagu"
+                  },
+                  "artistName": {
+                    "type": "string",
+                    "description": "Nama artis"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL Apple Music track atau album"
+                  },
+                  "quality": {
+                    "type": "string",
+                    "description": "Kualitas audio (m4a, 128, 192, 256, 320, 64)",
+                    "example": "m4a"
+                  },
+                  "zipDownload": {
+                    "type": "boolean",
+                    "description": "Jika true, hasil dikirim dalam bentuk ZIP",
+                    "example": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Berhasil mengunduh",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "integer", "example": 200 },
+                    "data": { "type": "object" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Parameter tidak lengkap",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "integer", "example": 400 },
+                    "message": { "type": "string", "example": "url for download!" }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error server saat download",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "integer", "example": 500 },
+                    "message": { "type": "string", "example": "An error occurred while downloading from Apple Music." },
+                    "error": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     "/pinterest": {
   "get": {
     "summary": "Get images from Pinterest",
